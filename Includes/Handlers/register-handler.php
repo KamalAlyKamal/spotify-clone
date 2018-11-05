@@ -18,13 +18,6 @@ function sanitizeFormPassword($stringInput)
 	return $stringInput;
 }
 
-if (isset($_POST["loginButton"])) {
-	echo "hello you have signed in with" . $_POST["loginUsername"];
-	# code...
-}
-
-
-
 if (isset($_POST["registerButton"])) {
 	$username = sanitizeFormUserName($_POST["username"]);
 	$firstName = sanitizeFormString($_POST["firstName"]);
