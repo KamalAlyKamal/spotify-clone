@@ -3,9 +3,9 @@
 	{
 		private $errorArray;
 
-		public	function __construct(argument) {
+		public	function __construct() {
 			# code...
-			$this->$errorArray = array();
+			$this->errorArray = array();
 		}
 
 		public function register($username,$firstName,$lastName,$email,$email2,$password,$password2) {
@@ -14,6 +14,16 @@
 			$this->validateLastName($lastName);
 			$this->validateEmails($email, $email2);
 			$this->validatePasswords($password, $password2);
+			if(empty($this->errorArray))
+			{
+				//insert into database 
+				return true;
+			}
+			else
+			{
+				return false ;
+
+			}
 		}
 
 		private function validateUsername($un) {
