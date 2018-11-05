@@ -1,19 +1,18 @@
-
 <?php 
-function santizeFormUserName($stringInput){
+function sanitizeFormUserName($stringInput){
 	$stringInput = strip_tags($stringInput);
 	$stringInput = str_replace(" ", "", $stringInput);
 	return $stringInput;
 }
 
-function santizeFormStrings($stringInput){
+function sanitizeFormString($stringInput){
 	$stringInput = strip_tags($stringInput);
 	$stringInput = str_replace(" ", "", $stringInput);
 	$stringInput=ucfirst(strtolower($stringInput));
 	return $stringInput;
 }
 
-function santizeFormPassword($stringInput)
+function sanitizeFormPassword($stringInput)
 {
 	$stringInput = strip_tags($stringInput);
 	return $stringInput;
@@ -24,15 +23,18 @@ if (isset($_POST["loginButton"])) {
 	# code...
 }
 
+
+
 if (isset($_POST["registerButton"])) {
-	# code...
-	$userName = santizeFormUserName($_POST["username"]);
-	$firstName = santizeFormStrings($_POST("firstName"));
-	$lastName = santizeFormStrings($_POST("lastName"));
-	$email1 = santizeFormStrings($_POST("email"));
-	$email2 = santizeFormStrings($_POST("email2"));
-	$password1 = santizeFormPassword($_POST("password"));
-	$password2 = santizeFormPassword($_POST("password2"));
+	$userName = sanitizeFormUserName($_POST["username"]);
+	$firstName = sanitizeFormString($_POST("firstName"));
+	$lastName = sanitizeFormString($_POST("lastName"));
+	$email = sanitizeFormString($_POST("email"));
+	$email2 = sanitizeFormString($_POST("email2"));
+	$password = sanitizeFormPassword($_POST("password"));
+	$password2 = sanitizeFormPassword($_POST("password2"));
+
+	$account->register($username,$firstName,$lastName,$email,$email2,$password,$password2);
 }
 
  ?>

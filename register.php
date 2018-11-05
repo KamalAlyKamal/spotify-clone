@@ -1,4 +1,6 @@
 <?php
+include("Includes/classes/Account.php");
+$account = new Account();
 include("Includes/Handlers/register-handler.php");
 include("Includes/Handlers/login-handler.php");
 ?>
