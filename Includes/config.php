@@ -1,6 +1,9 @@
 <?php
     ob_start();
 
+    // Start sessions
+    session_start();
+
     // Sets timezone for saving datetimes in DB
     $timezone = date_default_timezone_set('Africa/Cairo');
 
