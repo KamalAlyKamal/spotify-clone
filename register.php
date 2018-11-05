@@ -43,6 +43,9 @@ function getInputValue($name) {
                 <?php 
                     echo $account->getError(Constants::$usernameCharacters);
                 ?>
+                <?php 
+                    echo $account->getError(Constants::$usernameTaken);
+                ?>
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="e.g. bartSimpson" value="<?php getInputValue("username") ?>" required>
             </p>
@@ -66,6 +69,9 @@ function getInputValue($name) {
                 ?>
                 <?php 
                     echo $account->getError(Constants::$emailInvalid);
+                ?>
+                <?php 
+                    echo $account->getError(Constants::$emailTaken);
                 ?>
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="e.g. bart@gmail.com" value="<?php getInputValue("email") ?>" required>
