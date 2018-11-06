@@ -65,6 +65,10 @@
 
 }
 
+#inputContainer input:focus {
+	outline: none;
+}
+
 #inputContainer label{
 
     font-size: 13px;
