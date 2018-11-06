@@ -115,8 +115,8 @@ function getInputValue($name) {
                 </form>
             </div>
             <div id="loginText">
-               <h1>Hear and Get great music,</h1>
-               <h2>Yes is for free</h2>
+               <h1>Listen to great music,</h1>
+               <h2>Yes it's for free</h2>
                <ul>
                    <li>Discover music you'll fall in love with</li>
                    <li>Create your own playlists</li>

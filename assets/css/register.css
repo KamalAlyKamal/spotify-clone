@@ -25,7 +25,10 @@
     width: 80%;
     margin:0 auto;
     position:relative;
-    max-width:1024px;
+    max-width:1110px;
+
+    display: flex;
+    justify-content: space-between;
  }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -48,6 +51,10 @@
     width: 400px;
     float: left;
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #inputContainer::after {
@@ -126,7 +133,12 @@
 
 #loginText {
     padding: 40px;
-    display: table-cell;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #loginText h1 {
@@ -137,7 +149,7 @@
 
 #loginText h2 {
  
-    margin: 35px 0;
+    margin: 30px 0;
     font-weight: bold;
 }
 
