@@ -1,0 +1,73 @@
+ html
+ ,body{
+ 	padding: 0;
+ 	margin: 0;
+ 	height: 100%; 
+ }
+ #background{
+ 	background-color:#000;
+ 	height: 100%;
+    background-image: url(../images/background-image.jpg);
+    background-size: cover;
+    background-position: center;
+    display: table;
+    width: 100%;
+ }
+
+ #loginContainer * {
+ 	color: #ffff;
+ 	font-family:"serif","Arial","Sans-serif","serif","Monospace";
+    font-weight:normal;
+    line-height:1em;
+    box-sizing:border-box;
+ }
+ #loginContainer{
+
+   width: 80%;
+   margin:0 auto;
+   position:relative;
+   max-width:1024px;
+ }
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #fff;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #fff;
+}
+
+
+ #inputContainer {
+    padding: 40px;
+    width: 400px;
+    float: left;
+    border-right: 1px solid #999;
+}
+#inputContainer h2{
+	text-align: center;
+}
+#inputContainer input[type="text"],
+#inputContainer input[type="email"],
+#inputContainer input[type="password"]{
+    display: block;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    height: 27px;
+    line-height: 27px;
+    width: 100%;
+
+}
+
+#inputContainer label{
+
+    font-size: 13px;
+    color: #ae8990;
+    margin-top: 13px;
+}
