@@ -14,7 +14,7 @@
  }
 
  #loginContainer * {
- 	color: #ffff;
+ 	color: #fff;
  	font-family:"serif","Arial","Sans-serif","serif","Monospace";
     font-weight:normal;
     line-height:1em;
@@ -88,4 +88,38 @@
     font-size: 13px;
     color: #ae8990;
     margin-top: 13px;
+}
+
+#inputContainer button {
+	background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 200px;
+    color: #fff;
+    width: 100%; 
+    line-height: 40px;
+    display: block;
+    font-size: 14px;
+    margin: 20px auto;
+}
+
+#inputContainer button:hover{
+	cursor: pointer;
+}
+
+.hasAccountText{
+	text-align: center;
+}
+
+.hasAccountText span{
+	font-weight: bold;
+    font-size: 12px;    
+}
+
+.hasAccountText span:hover{
+	cursor: pointer;
+	color: #CCCCCC !important;
+}
+
+#registerForm{
+	display: none;
 }
