@@ -84,7 +84,7 @@
 }
 
 #inputContainer label{
-
+	display: block; 
     font-size: 13px;
     color: #ae8990;
     margin-top: 13px;
@@ -122,4 +122,39 @@
 
 #registerForm{
 	display: none;
+}
+
+#loginText {
+    padding: 40px;
+    display: table-cell;
+}
+
+#loginText h1 {
+	color: #11f811;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+#loginText h2 {
+ 
+    margin: 35px 0;
+    font-weight: bold;
+}
+
+#loginText ul{
+	padding: 0px;
+}
+
+#loginText li{
+	font-size:20px;
+	list-style-type: none;
+	padding: 15px 54px;
+	color: #fad20d;
+	background:url(../images/Icons/checkmark.png) no-repeat 0 0  ;
+}
+
+#inputContainer .errorMessage{
+    color: #73ff73;
+    font-size: 12px;
+    display: block;
 }

@@ -21,7 +21,7 @@ function getInputValue($name) {
     <title>Spotify: Music for everyone</title>
     <link rel="stylesheet" type="text/css" href="assets/css/register.css">
 </head>
-<body>
+<body>  
     <div id="background">
         <div id="loginContainer">
             <div id="inputContainer">
@@ -32,7 +32,7 @@ function getInputValue($name) {
                             echo $account->getError(Constants::$loginFailed);
                         ?>
                         <label for="loginUsername">Username</label>
-                        <input type="text" id="loginUsername" name="loginUsername" placeholder="e.g. bartSimpson" required>
+                        <input type="text" id="loginUsername" name="loginUsername" value="<?php getInputValue('loginUsername') ?>" placeholder="e.g. bartSimpson" required>
                     </p>
                     <p>
                         <label for="loginPassword">Password</label>
@@ -47,7 +47,7 @@ function getInputValue($name) {
                 </form>
 
 
-                <form action="register.php" id="registerForm" method="POST">
+                <form action="register.php" id="registerForm" method="POST"   >
                     <h2>Create your free account</h2>
                     <p>
                         <?php 
@@ -113,6 +113,15 @@ function getInputValue($name) {
                         <span id="hideRegister">Already have account? Login now</span>
                     </div>
                 </form>
+            </div>
+            <div id="loginText">
+               <h1>Hear and Get great music,</h1>
+               <h2>Yes is for free</h2>
+               <ul>
+                   <li>Discover music you'll fall in love with</li>
+                   <li>Create your own playlists</li>
+                   <li>Follow artists to keep up to date</li>
+               </ul> 
             </div>    
         </div>
     </div>
