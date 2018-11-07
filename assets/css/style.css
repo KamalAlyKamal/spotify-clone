@@ -34,3 +34,46 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+#nowPlayingBar .content {
+    width: 100%;
+}
+
+.playerControls .buttons {
+    margin: 0 auto;
+    display: table;
+}
+
+.controlButton {
+    background-color: transparent;
+    border: none;
+    /* Vertically centers with display:table */
+    vertical-align: middle
+}
+
+.controlButton:hover {
+    cursor: pointer;
+}
+
+.controlButton:focus {
+    outline: none;
+}
+
+.controlButton img {
+    width: 20px;
+    height: 20px;
+}
+
+.controlButton img:hover {
+    color: #fff;
+}
+
+.controlButton.play img,
+.controlButton.pause img {
+    width: 32px;
+    height: 32px;
+}
+
+.pause {
+    display: none;
+}
