@@ -32,6 +32,11 @@ body {
     min-width: 180px;
 }
 
+#nowPlayingRight {
+    position: relative;
+    margin-top: 16px;
+}
+
 /***************************** PLAYING BAR CENTER START *****************************/
 
 #nowPlayingCenter {
@@ -151,3 +156,15 @@ body {
 }
 
 /***************************** PLAYING BAR LEFT END *****************************/
+
+/***************************** PLAYING BAR RIGHT START *****************************/
+.volumeBar {
+    width: 180px;
+    position: absolute;
+    right: 0;
+}
+
+.volumeBar .progressBar {
+    width: 125px;
+}
+/***************************** PLAYING BAR RIGHT END *****************************/
