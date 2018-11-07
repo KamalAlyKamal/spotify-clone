@@ -18,4 +18,19 @@ body {
     height: 90px;
     padding: 16px;
     box-sizing: border-box;
+    justify-content: space-between;
+}
+
+#nowPlayingLeft, 
+#nowPlayingRight {
+    width: 30%;
+    min-width: 180px;
+}
+
+#nowPlayingCenter {
+    width: 40%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
