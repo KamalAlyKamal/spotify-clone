@@ -15,7 +15,7 @@
 
  #loginContainer * {
  	color: #fff;
- 	font-family:"serif","Arial","Sans-serif","serif","Monospace";
+ 	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight:normal;
     line-height:1em;
     box-sizing:border-box;

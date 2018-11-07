@@ -25,7 +25,19 @@
     <div id="nowPlayingBarContainer">
         <div id="nowPlayingBar">
             <div id="nowPlayingLeft">
-
+                <div class="content">
+                    <span class="albumLink">
+                        <img src="assets/images/album-filler.jpg" alt="album" class="albumArtwork">
+                    </span>
+                    <div class="trackInfo">
+                        <span class="trackName">
+                            <span>Track Name</span>
+                        </span>
+                        <span class="artistName">
+                            <span>Artist Name</span>
+                        </span>
+                    </div>
+                </div>
             </div>
             <div id="nowPlayingCenter">
                 <div class="content playerControls">
