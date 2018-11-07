@@ -49,6 +49,16 @@
                             <img src="assets/images/Icons/repeat.png" alt="Repeat">
                         </button>
                     </div>
+
+                    <div class="playbackBar">
+                        <span class="progressTime current">0.00</span>
+                        <div class="progressBar">
+                            <div class="progressBarBG">
+                                <div class="progress"></div>
+                            </div>
+                        </div>
+                        <span class="progressTime remaining">0.00</span>
+                    </div>
                 </div>
             </div>
             <div id="nowPlayingRight">
