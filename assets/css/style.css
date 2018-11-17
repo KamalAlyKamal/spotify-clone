@@ -183,4 +183,58 @@ body {
     top: 0;
     left: 0;
 }
+
+.navBar {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+}
+
+.logo {
+    margin-bottom: 15px;
+}
+
+.logo img {
+    width: 32px;
+}
+
+.navBar .group {
+    border-top: 1px solid #a0a0a0;
+    padding: 10px 0;
+}
+
+.navItem {
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 700;
+    display: block;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+#navItemSearch {
+    cursor: pointer;
+}
+
+#navItemSearch:hover .navItemLink {
+    color: #fff;
+}
+
+.navItemLink {
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: all .2s;
+}
+
+.navItemLink:hover {
+    color: #fff;
+}
+
+.navItemLink .icon {
+    position: absolute;
+    right: 0;
+    top: 7px;
+    width: 25px;
+}
 /***************************** TOP CONTAINER END *****************************/
