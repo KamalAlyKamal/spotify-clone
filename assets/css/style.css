@@ -168,3 +168,19 @@ body {
     width: 125px;
 }
 /***************************** PLAYING BAR RIGHT END *****************************/
+
+/***************************** TOP CONTAINER START *****************************/
+#topContainer {
+    min-height: 100%;
+    width: 100%;
+}
+
+#navBarContainer {
+    background-color: #000;
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+/***************************** TOP CONTAINER END *****************************/
