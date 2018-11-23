@@ -1,5 +1,6 @@
 <?php
     include("Includes/config.php");
+    include("Includes/classes/Artist.php");
 
     // LOGOUT
     // session_destroy();
