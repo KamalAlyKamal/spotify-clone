@@ -26,8 +26,8 @@
     </div>
 </div>
 
-<div class="trackListContainer">
-    <ul class="trackList">
+<div class="tracklistContainer">
+    <ul class="tracklist">
         <?php
             $songIdArray = $album->getSongIds();
 
@@ -36,7 +36,7 @@
                 $albumSong = new Song($con, $songId);
                 $albumArtist = $albumSong->getArtist();
 
-                echo    "<li class='trackListRow'>
+                echo    "<li class='tracklistRow'>
                             <div class='trackCount'>
                                 <img class='play' src='assets/images/Icons/play-white.png'>
                                 <span class='trackNumber'>$count.</span>
