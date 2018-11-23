@@ -8,6 +8,7 @@ body {
 * {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #fff;
+    letter-spacing: 1px;
 }
 
 body {
@@ -253,6 +254,38 @@ body {
 
 #mainContent {
     padding: 0 20px;
+}
+
+.pageHeadingBig {
+    padding: 20px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.gridViewItem {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 29%;
+    max-width: 200px;
+    min-width: 150px;
+}
+
+.gridViewItem img {
+    width: 100%;
+}
+
+.gridViewItem a {
+    text-decoration: none;
+}
+
+.gridViewInfo {
+    font-weight: 300;
+    text-align: center;
+    padding: 5px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 /***************************** MAIN CONTAINER END *****************************/
 
