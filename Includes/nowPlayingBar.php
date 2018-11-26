@@ -33,8 +33,14 @@
                 $('.artistName span').text(artist.name);
             });
 
+            // AJAX call to get album
+            $.post("Includes/Handlers/ajax/getAlbumJson.php", { albumId: track.album }, function(data) {
+                var album = JSON.parse(data);
+                $('.albumLink img').attr("src", album.artworkPath);
+            });
+
             audioElement.setTrack(track.path);
-            audioElement.play();
+            // audioElement.play();
             $('.controlButton.play').hide();
             $('.controlButton.pause').show();
         });
@@ -63,7 +69,7 @@
         <div id="nowPlayingLeft">
             <div class="content">
                 <span class="albumLink">
-                    <img src="assets/images/album-filler.jpg" alt="album" class="albumArtwork">
+                    <img src="" alt="album" class="albumArtwork">
                 </span>
                 <div class="trackInfo">
                     <span class="trackName">
