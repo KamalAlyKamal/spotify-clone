@@ -22,7 +22,17 @@
     function setTrack(trackId, newPlaylist, play) {
         // Get song from db using AJAX
         $.post("Includes/Handlers/ajax/getSongJson.php", { songId: trackId }, function(data) {
+            // Parse returned string array into json
             var track = JSON.parse(data);
+
+            $('.trackName span').text(track.title);
+            
+            // AJAX call to get artist
+            $.post("Includes/Handlers/ajax/getArtistJson.php", { artistId: track.artist }, function(data) {
+                var artist = JSON.parse(data);
+                $('.artistName span').text(artist.name);
+            });
+
             audioElement.setTrack(track.path);
             audioElement.play();
             $('.controlButton.play').hide();
@@ -57,10 +67,10 @@
                 </span>
                 <div class="trackInfo">
                     <span class="trackName">
-                        <span>Track Name</span>
+                        <span></span>
                     </span>
                     <span class="artistName">
-                        <span>Artist Name</span>
+                        <span></span>
                     </span>
                 </div>
             </div>
