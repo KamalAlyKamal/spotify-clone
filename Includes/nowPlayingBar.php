@@ -39,19 +39,26 @@
                 $('.albumLink img').attr("src", album.artworkPath);
             });
 
-            audioElement.setTrack(track.path);
+            audioElement.setTrack(track);
             // audioElement.play();
-            $('.controlButton.play').hide();
-            $('.controlButton.pause').show();
         });
 
         if(play) {
+            $('.controlButton.play').hide();
+            $('.controlButton.pause').show();
             audioElement.play();
         }
     }
 
     // Functions to play/pause and toggle buttons
     function playSong() {
+        // Update song count only if currentTime = 0 (just played not paused then played)
+        if(audioElement.audio.currentTime == 0) {
+            // AJAX call to update song play count
+            $.post("Includes/Handlers/ajax/updatePlays.php", { songId: audioElement.currentlyPlaying.id });
+        }
+
+
         $('.controlButton.play').hide();
         $('.controlButton.pause').show();
         audioElement.play();
