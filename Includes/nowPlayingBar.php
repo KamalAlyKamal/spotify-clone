@@ -20,7 +20,15 @@
 
     // Only plays if play is true
     function setTrack(trackId, newPlaylist, play) {
-        audioElement.setTrack("assets/music/bensound-buddy.mp3");
+        // Get song from db using AJAX
+        $.post("Includes/Handlers/ajax/getSongJson.php", { songId: trackId }, function(data) {
+            var track = JSON.parse(data);
+            audioElement.setTrack(track.path);
+            audioElement.play();
+            $('.controlButton.play').hide();
+            $('.controlButton.pause').show();
+        });
+
         if(play) {
             audioElement.play();
         }
