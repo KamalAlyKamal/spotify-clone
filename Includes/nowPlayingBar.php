@@ -16,7 +16,32 @@
         audioElement = new Audio();
         // Dont play when page reloads
         setTrack(currentPlaylist[0], currentPlaylist, false);
+
+        // Dragging progress bar
+        $('.playbackBar .progressBar').mousedown(function() {
+            mouseDown = true;
+        });
+        $('.playbackBar .progressBar').mousemove(function(e) {
+            if(mouseDown) {
+                // Set time of song depending on mouse position
+                timeFromOffset(e, this);
+            }
+        });
+        $('.playbackBar .progressBar').mouseup(function(e) {
+            timeFromOffset(e, this);
+        });
+        $(document).mouseup(function() {
+            mouseDown = false;
+        });
     });
+
+    // Get time of song from mouse offset (Start offset)
+    function timeFromOffset(mouse, progressBar) {
+        // get offset of mouse in X direction
+        var percentage = ( mouse.offsetX / $(progressBar).width() ) * 100;
+        var seconds = audioElement.audio.duration * (percentage / 100);
+        audioElement.setTime(seconds);
+    }
 
     // Only plays if play is true
     function setTrack(trackId, newPlaylist, play) {
