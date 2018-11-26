@@ -11,6 +11,12 @@ function getInputValue($name) {
         echo $_POST[$name];
     }
 }
+// To return the user to index.php if he is logged in
+if(isset($_SESSION['userLoggedIn'])) {
+    if ($_SESSION['userLoggedIn']) {
+        header("Location: index.php");
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

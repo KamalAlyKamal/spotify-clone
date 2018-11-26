@@ -11,9 +11,35 @@
 ?>
 
 <script>
-    console.log(<?php echo $jsonArray; ?>);
+    $(document).ready(function() {
+        currentPlaylist = <?php echo $jsonArray; ?>;
+        audioElement = new Audio();
+        // Dont play when page reloads
+        setTrack(currentPlaylist[0], currentPlaylist, false);
+    });
 
+    // Only plays if play is true
+    function setTrack(trackId, newPlaylist, play) {
+        audioElement.setTrack("assets/music/bensound-buddy.mp3");
+        if(play) {
+            audioElement.play();
+        }
+    }
+
+    // Functions to play/pause and toggle buttons
+    function playSong() {
+        $('.controlButton.play').hide();
+        $('.controlButton.pause').show();
+        audioElement.play();
+    }
+
+    function pauseSong() {
+        $('.controlButton.play').show();
+        $('.controlButton.pause').hide();
+        audioElement.pause();
+    }
 </script>
+
 <div id="nowPlayingBarContainer">
     <div id="nowPlayingBar">
         <div id="nowPlayingLeft">
@@ -40,10 +66,10 @@
                     <button class="controlButton previous" title="Previous">
                         <img src="assets/images/Icons/previous.png" alt="Previous">
                     </button>
-                    <button class="controlButton play" title="Play">
+                    <button class="controlButton play" title="Play" onclick="playSong();">
                         <img src="assets/images/Icons/play.png" alt="Play">
                     </button>
-                    <button class="controlButton pause" title="Pause">
+                    <button class="controlButton pause" title="Pause" onclick="pauseSong();">
                         <img src="assets/images/Icons/pause.png" alt="Pause">
                     </button>
                     <button class="controlButton next" title="Next">

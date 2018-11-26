@@ -22,6 +22,7 @@
     <title>Spotify: Music for everyone</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js" ></script>
     <script src="assets/js/script.js"></script>
 </head>
 <body>
