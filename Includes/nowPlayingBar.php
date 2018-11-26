@@ -16,6 +16,8 @@
         audioElement = new Audio();
         // Dont play when page reloads
         setTrack(currentPlaylist[0], currentPlaylist, false);
+        // Set volume progress bar initially
+        updateVolumeProgressBar(audioElement.audio);
 
         // Dragging progress bar
         $('.playbackBar .progressBar').mousedown(function() {
@@ -30,6 +32,28 @@
         $('.playbackBar .progressBar').mouseup(function(e) {
             timeFromOffset(e, this);
         });
+
+
+        // Dragging volume bar
+        $('.volumeBar .progressBar').mousedown(function() {
+            mouseDown = true;
+        });
+        $('.volumeBar .progressBar').mousemove(function(e) {
+            if(mouseDown) {
+                var percentage = e.offsetX / $(this).width();
+                if(percentage >=0 && percentage <=1) {
+                    audioElement.audio.volume = percentage;
+                }
+            }
+        });
+        $('.volumeBar .progressBar').mouseup(function(e) {
+            var percentage = e.offsetX / $(this).width();
+            if(percentage >=0 && percentage <=1) {
+                audioElement.audio.volume = percentage;
+            }
+        });
+
+
         $(document).mouseup(function() {
             mouseDown = false;
         });
