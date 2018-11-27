@@ -34,6 +34,13 @@
     });
 </script>
 
+<?php
+    // If empty query, stop loading the rest of the page
+    if($query == "") {
+        exit();
+    }
+?>
+
 <div class="tracklistContainer borderBottom">
     <h2>SONGS</h2>
     <ul class="tracklist">
@@ -41,7 +48,7 @@
             $songsQuery = mysqli_query($con, "SELECT id FROM songs WHERE title LIKE '$query%' LIMIT 10");
 
             if(mysqli_num_rows($songsQuery) == 0) {
-                echo "<span class='noResults'>Oops, No songs found matching: " . $query . "</span>";
+                echo "<p class='noResults'>Oops, No songs found matching: " . $query . "</p>";
             }
 
             $songIdArray = array();
@@ -92,7 +99,7 @@
     <?php
         $artistsQuery = mysqli_query($con, "SELECT id FROM artists WHERE name LIKE '$query%' LIMIT 10");
         if(mysqli_num_rows($artistsQuery) == 0) {
-            echo "<span class='noResults'>Oops, No artists found matching: " . $query . "</span>";
+            echo "<p class='noResults'>Oops, No artists found matching: " . $query . "</p>";
         }
 
         while($row = mysqli_fetch_array($artistsQuery)) {
@@ -106,6 +113,28 @@
                                 "
                             </span>
                         </div>
+                    </div>";
+        }
+    ?>
+</div>
+
+<div class="gridViewContainer">
+    <h2>ALBUMS</h2>
+    <?php 
+        $albumQuery = mysqli_query($con, "SELECT * FROM albums WHERE title LIKE '$query%' LIMIT 10");
+
+        if(mysqli_num_rows($albumQuery) == 0) {
+            echo "<p class='noResults'>Oops, No albums found matching: " . $query . "</p>";
+        }
+
+        while ($row = mysqli_fetch_array($albumQuery)) {
+            echo    "<div class='gridViewItem'>
+                        <span onclick='openPage(\"album.php?id=" . $row['id'] . "\");'>
+                            <img src='" . $row['artworkPath'] . "'>
+                            <div class='gridViewInfo'>"
+                                . $row['title'] .
+                            "</div>
+                        </span>
                     </div>";
         }
     ?>

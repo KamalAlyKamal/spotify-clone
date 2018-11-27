@@ -449,7 +449,8 @@ input:focus {
 }
 
 .tracklistContainer h2,
-.gridViewContainer h2 {
+.gridViewContainer h2,
+.artistsContainer h2 {
     text-align: center;
 }
 /***************************** ARTIST PAGE END *****************************/
@@ -485,5 +486,10 @@ input:focus {
 
 .artistRow .artistRowName span {
     color: #fff;
+}
+
+.noResults {
+    text-align: center;
+    margin: 15px;
 }
 /***************************** SEARCH PAGE END *****************************/
