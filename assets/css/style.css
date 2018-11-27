@@ -474,4 +474,16 @@ input:focus {
     font-size: 62px;
     letter-spacing: 2px;
 }
+
+.artistRow {
+    padding: 15px 10px;
+}
+
+.artistRow:hover {
+    background-color: #282828;
+}
+
+.artistRow .artistName span {
+    color: #fff;
+}
 /***************************** SEARCH PAGE END *****************************/
