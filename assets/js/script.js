@@ -1,6 +1,8 @@
 /******************** GLOBAL VARIABLES START *****************************/
 var currentPlaylist = [];
 var shuffledPlaylist = [];
+// Temp playlist for the album which the user is on
+var tempPlaylist = [];
 var audioElement;
 // Check if mouse is currently pressed or not
 var mouseDown = false;
