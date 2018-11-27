@@ -73,6 +73,12 @@
     }
 
     function nextSong() {
+        if(repeat) {
+            audioElement.setTime(0);
+            playSong();
+            return;
+        }
+
         if(currentIndex == currentPlaylist.length - 1) {
             // if last song in playlist
             currentIndex = 0; //go back to start
@@ -85,13 +91,24 @@
         setTrack(track, currentPlaylist, true);
     }
 
+    function setRepeat() {
+        // toggle repeat
+        repeat = !repeat;
+
+        var image = repeat ? "repeat-active.png" : "repeat.png";
+
+        $(".controlButton.repeat img").attr("src", "assets/images/Icons/" + image);
+    }
+
     // Only plays if play is true
     function setTrack(trackId, newPlaylist, play) {
+
+        // Get currentIndex of currentlyPlaying song
+        currentIndex = currentPlaylist.indexOf(trackId);
+        pauseSong();
+
         // Get song from db using AJAX
         $.post("Includes/Handlers/ajax/getSongJson.php", { songId: trackId }, function(data) {
-            // Get currentIndex of currentlyPlaying song
-            currentIndex = currentPlaylist.indexOf(trackId);
-
             // Parse returned string array into json
             var track = JSON.parse(data);
 
@@ -176,7 +193,7 @@
                     <button class="controlButton next" title="Next" onclick="nextSong();">
                         <img src="assets/images/Icons/next.png" alt="Next">
                     </button>
-                    <button class="controlButton repeat" title="Repeat">
+                    <button class="controlButton repeat" title="Repeat" onclick="setRepeat();">
                         <img src="assets/images/Icons/repeat.png" alt="Repeat">
                     </button>
                 </div>

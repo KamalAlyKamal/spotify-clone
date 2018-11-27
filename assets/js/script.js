@@ -1,9 +1,12 @@
+/******************** GLOBAL VARIABLES START *****************************/
 var currentPlaylist = [];
 var audioElement;
 // Check if mouse is currently pressed or not
 var mouseDown = false;
 // currentIndex of currentlyPlaying song (to use with next/previous)
 var currentIndex = 0;
+var repeat = false;
+/******************** GLOBAL VARIABLES END *****************************/
 
 function formatTime(seconds) {
     var time = Math.round(seconds);
