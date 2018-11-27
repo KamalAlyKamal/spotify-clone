@@ -72,10 +72,26 @@
         audioElement.setTime(seconds);
     }
 
+    function nextSong() {
+        if(currentIndex == currentPlaylist.length - 1) {
+            // if last song in playlist
+            currentIndex = 0; //go back to start
+        }
+        else {
+            currentIndex++;
+        }
+
+        var track = currentPlaylist[currentIndex];
+        setTrack(track, currentPlaylist, true);
+    }
+
     // Only plays if play is true
     function setTrack(trackId, newPlaylist, play) {
         // Get song from db using AJAX
         $.post("Includes/Handlers/ajax/getSongJson.php", { songId: trackId }, function(data) {
+            // Get currentIndex of currentlyPlaying song
+            currentIndex = currentPlaylist.indexOf(trackId);
+
             // Parse returned string array into json
             var track = JSON.parse(data);
 
@@ -94,7 +110,7 @@
             });
 
             audioElement.setTrack(track);
-            // audioElement.play();
+            playSong();
         });
 
         if(play) {
@@ -157,7 +173,7 @@
                     <button class="controlButton pause" title="Pause" onclick="pauseSong();">
                         <img src="assets/images/Icons/pause.png" alt="Pause">
                     </button>
-                    <button class="controlButton next" title="Next">
+                    <button class="controlButton next" title="Next" onclick="nextSong();">
                         <img src="assets/images/Icons/next.png" alt="Next">
                     </button>
                     <button class="controlButton repeat" title="Repeat">
