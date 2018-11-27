@@ -68,7 +68,13 @@ function Audio() {
         }
     });
 
+    // Event listener for volume change
     this.audio.addEventListener('volumechange', function() {
         updateVolumeProgressBar(this);
+    });
+
+    // Event listener for song end
+    this.audio.addEventListener('ended', function() {
+        nextSong();
     });
 }
