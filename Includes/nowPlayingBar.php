@@ -112,7 +112,15 @@
         $(".controlButton.repeat img").attr("src", "assets/images/Icons/" + image);
     }
 
-    // Only plays if play is true
+    function setMute() {
+        audioElement.audio.muted = !audioElement.audio.muted;
+
+        var image = audioElement.audio.muted ? "volume-mute.png" : "volume.png";
+
+        $(".controlButton.volume img").attr("src", "assets/images/Icons/" + image);
+    }
+
+    
     function setTrack(trackId, newPlaylist, play) {
 
         // Get currentIndex of currentlyPlaying song
@@ -223,8 +231,8 @@
         </div>
         <div id="nowPlayingRight">
             <div class="volumeBar">
-                <button class="controlButton volume" title="Volume">
-                <img src="assets/images/Icons/volume.png" alt="Volume">
+                <button class="controlButton volume" title="Volume" onclick="setMute();">
+                    <img src="assets/images/Icons/volume.png" alt="Volume">
                 </button>
                 <div class="progressBar">
                     <div class="progressBarBG">
