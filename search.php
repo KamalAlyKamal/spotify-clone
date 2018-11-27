@@ -99,7 +99,7 @@
             $artistRow = new Artist($con, $row['id']);
 
             echo    "<div class='artistRow'>
-                        <div class='artistName'>
+                        <div class='artistRowName'>
                             <span class='pointer' onclick='openPage(\"artist.php?id=" . $artistRow->getId() . "\")'>
                                 "
                                 . $artistRow->getName() .
