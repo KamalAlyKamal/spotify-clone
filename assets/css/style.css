@@ -427,6 +427,10 @@ body {
     min-width: 130px;
 }
 
+.button:focus {
+    outline: none;
+}
+
 .button.green {
     background-color: #2ebd59;
     border-color: #2ebd59;

@@ -31,6 +31,11 @@ function openPage(url) {
     history.pushState(null, null, url);
 }
 
+// Plays first song in artist page
+function playArtistFirstSong() {
+    setTrack(tempPlaylist[0], tempPlaylist, true);
+}
+
 function formatTime(seconds) {
     var time = Math.round(seconds);
     var minutes = Math.floor(time / 60);
