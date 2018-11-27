@@ -1,5 +1,5 @@
 <?php 
-    include("Includes/header.php"); 
+    include("Includes/includedFiles.php"); 
 
     if(isset($_GET['id'])) {
         $albumId = $_GET['id'];
@@ -63,5 +63,3 @@
         </script>
     </ul>
 </div>
-
-<?php include("Includes/footer.php"); ?>

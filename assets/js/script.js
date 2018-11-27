@@ -10,7 +10,22 @@ var mouseDown = false;
 var currentIndex = 0;
 var repeat = false;
 var shuffle = false;
+
+var userLoggedIn;
 /******************** GLOBAL VARIABLES END *****************************/
+
+// DYNAMIC LOADING FUNCTION
+function openPage(url) {
+    if(url.indexOf("?") == -1) {
+        // if url doesnt have ? means first parameter
+        url = url + "?";
+    }
+
+    // replaces special characters like space to %20 in url
+    var encodedUrl = encodeURI(url + "&userLoggedIn=" + userLoggedIn);
+
+    $("#mainContent").load(encodedUrl);
+}
 
 function formatTime(seconds) {
     var time = Math.round(seconds);

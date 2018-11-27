@@ -198,6 +198,10 @@ body {
     -ms-flex-direction: column;
 }
 
+.navBar span {
+    cursor: pointer;
+}
+
 .logo {
     margin-bottom: 15px;
 }

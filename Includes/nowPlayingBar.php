@@ -194,14 +194,11 @@
             });
 
             audioElement.setTrack(track);
-            playSong();
-        });
 
-        if(play) {
-            $('.controlButton.play').hide();
-            $('.controlButton.pause').show();
-            audioElement.play();
-        }
+            if(play) {
+                playSong();
+            }
+        });
     }
 
     // Functions to play/pause and toggle buttons
