@@ -25,6 +25,10 @@ function openPage(url) {
     var encodedUrl = encodeURI(url + "&userLoggedIn=" + userLoggedIn);
 
     $("#mainContent").load(encodedUrl);
+    $('body').scrollTop(0);
+    // thanks to stackoverflow
+    // this writes the url into the browsers address bar as if the user changed the page
+    history.pushState(null, null, url);
 }
 
 function formatTime(seconds) {
