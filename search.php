@@ -33,3 +33,55 @@
         });
     });
 </script>
+
+<div class="tracklistContainer borderBottom">
+    <h2>SONGS</h2>
+    <ul class="tracklist">
+        <?php
+            $songsQuery = mysqli_query($con, "SELECT id FROM songs WHERE title LIKE '$query%' LIMIT 10");
+
+            if(mysqli_num_rows($songsQuery) == 0) {
+                echo "<span class='noResults'>Oops, No songs found matching: " . $query . "</span>";
+            }
+
+            $songIdArray = array();
+
+            $count = 1;
+            while($row = mysqli_fetch_array($songsQuery)) {
+                // ONLY GET TOP 5 SONGS FOR THIS ARTIST
+                // if($count > 15) {
+                //     break;
+                // }
+                
+                array_push($songIdArray, $row['id']);
+
+                $albumSong = new Song($con, $row['id']);
+                $albumArtist = $albumSong->getArtist();
+
+                echo    "<li class='tracklistRow'>
+                            <div class='trackCount'>
+                                <img class='play' src='assets/images/Icons/play-white.png' onclick='setTrack(\"" . $albumSong->getId() . "\", tempPlaylist, true)'>
+                                <span class='trackNumber'>$count.</span>
+                            </div>
+                            <div class='trackInfo'>
+                                <span class='trackName'>" . $albumSong->getTitle() . "</span>
+                                <span class='artistName'>" . $albumArtist->getName() . "</span>
+                            </div>
+                            <div class='trackOptions'>
+                                <img class='optionButton' src='assets/images/Icons/more.png'>
+                            </div>
+                            <div class='trackDuration'>
+                                <span class='duration'>" . $albumSong->getDuration() . "</span>
+                            </div>  
+                        </li>";
+                
+                $count++;
+            }
+        ?>
+
+        <script>
+            var tempSongIds = '<?php echo json_encode($songIdArray); ?>';
+            tempPlaylist = JSON.parse(tempSongIds);
+        </script>
+    </ul>
+</div>
