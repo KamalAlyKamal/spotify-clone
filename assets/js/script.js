@@ -12,10 +12,17 @@ var repeat = false;
 var shuffle = false;
 
 var userLoggedIn;
+// Timer used in search
+var timer;
 /******************** GLOBAL VARIABLES END *****************************/
 
 // DYNAMIC LOADING FUNCTION
 function openPage(url) {
+    // If timer is set and navigating to another page, clear the timer
+    if(timer != null) {
+        clearTimeout(timer);
+    }
+
     if(url.indexOf("?") == -1) {
         // if url doesnt have ? means first parameter
         url = url + "?";

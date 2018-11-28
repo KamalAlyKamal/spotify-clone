@@ -23,7 +23,6 @@
 
     // IIFE to reload page with new query after 2 seconds when stopped typing
     $(function() {
-        var timer;
         $(".searchInput").keyup(function() {
             clearTimeout(timer);
             timer = setTimeout(function() {
