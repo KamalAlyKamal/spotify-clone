@@ -20,6 +20,9 @@
 <script>
     // Refocus input on page reload
     $(".searchInput").focus();
+    var temp = $(".searchInput").val();
+    $(".searchInput").val("");
+    $(".searchInput").val(temp);
 
     // IIFE to reload page with new query after 2 seconds when stopped typing
     $(function() {
