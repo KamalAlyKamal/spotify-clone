@@ -16,6 +16,18 @@ var userLoggedIn;
 var timer;
 /******************** GLOBAL VARIABLES END *****************************/
 
+// Hides optionsMenu on scroll event
+$(window).scroll(hideOptionsMenu);
+
+$(document).click(function(clickEvent) {
+    // Get element that was clicked on
+    var target = $(clickEvent.target);
+    // If target was not optionButton or item, hide it
+    if(!target.hasClass("item") && !target.hasClass("optionButton")) {
+        hideOptionsMenu();
+    }
+});
+
 // DYNAMIC LOADING FUNCTION
 function openPage(url) {
     // If timer is set and navigating to another page, clear the timer
@@ -58,6 +70,14 @@ function showOptionsMenu(button) {
         "left": left - menuWidth + "px",
         "display": "inline"
     });
+}
+
+// Hides options menu if it is displaying
+function hideOptionsMenu() {
+    var menu = $(".optionsMenu");
+    if(menu.css("display") != "none") {
+        menu.css("display", "none");
+    }
 }
 
 function createPlaylist() {
