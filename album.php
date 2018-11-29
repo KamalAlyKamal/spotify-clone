@@ -64,3 +64,9 @@
         </script>
     </ul>
 </div>
+
+<nav class="optionsMenu">
+    <input type="hidden" class="songId">
+    <div class="item">Add to playlist</div>
+    <div class="item">2</div>
+</nav>
