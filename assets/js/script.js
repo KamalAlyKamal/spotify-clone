@@ -28,6 +28,24 @@ $(document).click(function(clickEvent) {
     }
 });
 
+// Functions that is run on dropdown option click
+$(document).on("change", "select.playlist", function() {
+    var selectMenu = $(this);
+    var playlistId = $(this).val();
+    var songId = $(this).prev(".songId").val();
+
+    $.post("Includes/Handlers/ajax/addToPlaylist.php", { playlistId: playlistId, songId: songId }, function(err) {
+        if(err != "") {
+            console.log(err);
+            return;
+        }
+
+        hideOptionsMenu();
+        // Reset optionsMenu
+        selectMenu.val("");
+    });
+});
+
 // DYNAMIC LOADING FUNCTION
 function openPage(url) {
     // If timer is set and navigating to another page, clear the timer
@@ -52,7 +70,6 @@ function openPage(url) {
 
 // Shows options menu in a position relative to the clicked button
 function showOptionsMenu(button) {
-    console.log("asdasd");
     var menu = $(".optionsMenu");
     var menuWidth = menu.width();
     // Get distance between top of window and top of page
@@ -63,6 +80,11 @@ function showOptionsMenu(button) {
     var top = elementOffset - scrollTop;
     // Get left position of button
     var left = $(button).position().left;
+
+    // Get songId of the clicked on song
+    var songId = $(button).prevAll(".songId").val();
+    // Finds the hidden input of the optionsMenu and gives it the id
+    menu.find(".songId").val(songId);
 
     // Apply css to menu
     menu.css({

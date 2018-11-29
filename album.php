@@ -47,6 +47,7 @@
                                 <span class='artistName'>" . $albumArtist->getName() . "</span>
                             </div>
                             <div class='trackOptions'>
+                                <input type='hidden' class='songId' value='" . $albumSong->getId() . "'>
                                 <img class='optionButton' src='assets/images/Icons/more.png' onclick='showOptionsMenu(this)'>
                             </div>
                             <div class='trackDuration'>
