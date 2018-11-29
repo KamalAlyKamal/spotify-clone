@@ -504,4 +504,9 @@ input:focus {
     margin: 0 auto 20px auto;
     font-weight: 700;
 }
+
+.playlistImage {
+    border: 3px solid #282828;
+    padding: 10px;
+}
 /***************************** YOURMUSIC PLAYLIST END *****************************/

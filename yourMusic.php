@@ -20,7 +20,7 @@
             while ($row = mysqli_fetch_array($playlistsQuery)) {
                 $playlist = new Playlist($con, $row);
 
-                echo    "<div class='gridViewItem' onclick='openPage(\"playlist.php?id=" . $playlist->getId() . "\")'>
+                echo    "<div class='gridViewItem pointer' onclick='openPage(\"playlist.php?id=" . $playlist->getId() . "\")'>
                             <div class='playlistImage'>
                                 <img src='assets/images/Icons/playlist.png'>
                             </div>
