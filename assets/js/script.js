@@ -102,6 +102,21 @@ function hideOptionsMenu() {
     }
 }
 
+function removeFromPlaylist(button, playlistId) {
+    // Get songId of the clicked on song
+    var songId = $(button).prevAll(".songId").val();
+
+    $.post("Includes/Handlers/ajax/removeFromPlaylist.php", { playlistId: playlistId, songId: songId }, function(err) {
+        if(err != "") {
+            console.log(err);
+            return;
+        }
+
+        // Reload page again async.
+        openPage("playlist.php?id=" + playlistId);
+    });
+}
+
 function createPlaylist() {
     var playlistName = prompt("Please enter the name of your playlist");
     if(playlistName != null) {
