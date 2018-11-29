@@ -38,6 +38,28 @@ function openPage(url) {
     history.pushState(null, null, url);
 }
 
+// Shows options menu in a position relative to the clicked button
+function showOptionsMenu(button) {
+    console.log("asdasd");
+    var menu = $(".optionsMenu");
+    var menuWidth = menu.width();
+    // Get distance between top of window and top of page
+    var scrollTop = $(window).scrollTop();
+    // Get distance between top of page and button
+    var elementOffset = $(button).offset().top;
+    // Calculate position of menu
+    var top = elementOffset - scrollTop;
+    // Get left position of button
+    var left = $(button).position().left;
+
+    // Apply css to menu
+    menu.css({
+        "top": top + "px",
+        "left": left - menuWidth + "px",
+        "display": "inline"
+    });
+}
+
 function createPlaylist() {
     var playlistName = prompt("Please enter the name of your playlist");
     if(playlistName != null) {

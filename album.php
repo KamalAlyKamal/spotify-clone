@@ -47,7 +47,7 @@
                                 <span class='artistName'>" . $albumArtist->getName() . "</span>
                             </div>
                             <div class='trackOptions'>
-                                <img class='optionButton' src='assets/images/Icons/more.png'>
+                                <img class='optionButton' src='assets/images/Icons/more.png' onclick='showOptionsMenu(this)'>
                             </div>
                             <div class='trackDuration'>
                                 <span class='duration'>" . $albumSong->getDuration() . "</span>
