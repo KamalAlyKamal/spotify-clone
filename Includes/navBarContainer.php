@@ -20,7 +20,7 @@
             </div>
 
             <div class="navItem">
-                <span onclick="openPage('profile.php');" class="navItemLink">Kamal Aly</span>
+                <span onclick="openPage('settings.php');" class="navItemLink"><?php echo $userLoggedIn->getName(); ?></span>
             </div>
         </div>
     </nav>
