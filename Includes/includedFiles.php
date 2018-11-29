@@ -2,9 +2,18 @@
     // If request was sent with AJAX not manually typing url
     if(isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
         include("Includes/config.php");
+        include("Includes/classes/User.php");
         include("Includes/classes/Artist.php");
         include("Includes/classes/Album.php");
         include("Includes/classes/Song.php");
+
+        if(isset($_GET['userLoggedIn'])) {
+            $userLoggedIn = new User($con, $_GET['userLoggedIn']);
+        }
+        else {
+            echo "username not passed";
+            exit(); //Dont load rest of the page
+        }
     }
     else { //manualy url or pressed on link
         include("Includes/header.php");
