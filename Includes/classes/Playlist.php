@@ -7,6 +7,12 @@
         private $owner;
 
 		public	function __construct($con, $data) {
+            // If data is not array
+            if(!is_array($data)) {
+                $query = mysqli_query($con, "SELECT * FROM playlists WHERE id='$data'");
+                $data = mysqli_fetch_array($query);
+            }
+
 			$this->con = $con;
             $this->id = $data['id'];
             $this->name = $data['name'];
@@ -23,6 +29,11 @@
 
         public function getOwner() {
             return $this->owner;
+        }
+
+        public function getNumberOfSongs() {
+            $query = mysqli_query($this->con, "SELECT songId FROM playlistssongs WHERE playlistId='$this->id'");
+            return mysqli_num_rows($query);
         }
 	}
 
