@@ -38,10 +38,15 @@ function openPage(url) {
     history.pushState(null, null, url);
 }
 
-function createPlaylist(username) {
+function createPlaylist() {
     var playlistName = prompt("Please enter the name of your playlist");
     if(playlistName != null) {
-        $.post("Includes/Handlers/ajax/createPlaylist.php", { name: playlistName, username: username }, function() {
+        $.post("Includes/Handlers/ajax/createPlaylist.php", { name: playlistName, username: userLoggedIn }, function(err) {
+            if(err != "") {
+                console.log(err);
+                return;
+            }
+
             // Reload page again async.
             openPage("yourMusic.php");
         });
