@@ -53,6 +53,21 @@ function createPlaylist() {
     }
 }
 
+function deletePlaylist(playlistId) {
+    var conf = confirm("Are you sure you want to delete this playlist?");
+    if(conf) {
+        $.post("Includes/Handlers/ajax/deletePlaylist.php", { playlistId: playlistId }, function(err) {
+            if(err != "") {
+                console.log(err);
+                return;
+            }
+
+            // Reload page again async.
+            openPage("yourMusic.php");
+        });
+    }
+}
+
 // Plays first song in artist page
 function playArtistFirstSong() {
     setTrack(tempPlaylist[0], tempPlaylist, true);
