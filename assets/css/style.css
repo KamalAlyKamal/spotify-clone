@@ -493,3 +493,15 @@ input:focus {
     margin: 15px;
 }
 /***************************** SEARCH PAGE END *****************************/
+
+/***************************** YOURMUSIC PLAYLIST PAGE START *****************************/
+.playlistsContainer {
+    padding: 10px 0;
+}
+
+.buttonItems .button {
+    display: block;
+    margin: 0 auto 20px auto;
+    font-weight: 700;
+}
+/***************************** YOURMUSIC PLAYLIST END *****************************/

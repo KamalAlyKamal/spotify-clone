@@ -38,6 +38,16 @@ function openPage(url) {
     history.pushState(null, null, url);
 }
 
+function createPlaylist(username) {
+    var playlistName = prompt("Please enter the name of your playlist");
+    if(playlistName != null) {
+        $.post("Includes/Handlers/ajax/createPlaylist.php", { name: playlistName, username: username }, function() {
+            // Reload page again async.
+            openPage("yourMusic.php");
+        });
+    }
+}
+
 // Plays first song in artist page
 function playArtistFirstSong() {
     setTrack(tempPlaylist[0], tempPlaylist, true);
