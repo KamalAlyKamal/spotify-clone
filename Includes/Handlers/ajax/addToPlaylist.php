@@ -5,6 +5,15 @@
         $playlistId = $_POST['playlistId'];
         $songId = $_POST['songId'];
 
+        $songIdsQuery = mysqli_query($con, "SELECT songId from playlistssongs WHERE playlistId='$playlistId'");
+
+        while($row = mysqli_fetch_array($songIdsQuery)) {
+            if($songId == $row['songId']) {
+                // Duplicate in same playlist
+                exit();
+            }
+        }
+
         // Get last order to put the song in
         $orderIdQuery = mysqli_query($con, "SELECT MAX(playlistOrder) + 1 AS playlistOrder FROM playlistssongs WHERE playlistId='$playlistId'");
 
