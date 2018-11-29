@@ -53,6 +53,14 @@ function logout() {
     });
 }
 
+function updateEmail(emailClass) {
+    var email = $("." + emailClass).val();
+
+    $.post("Includes/Handlers/ajax/updateEmail.php", { email: email, username: userLoggedIn }, function(response) {
+        $("." + emailClass).nextAll(".message").text(response);
+    });
+}
+
 // DYNAMIC LOADING FUNCTION
 function openPage(url) {
     // If timer is set and navigating to another page, clear the timer
