@@ -46,6 +46,13 @@ $(document).on("change", "select.playlist", function() {
     });
 });
 
+function logout() {
+    $.post("Includes/Handlers/ajax/logout.php", function() {
+        // reload current page
+        location.reload();
+    });
+}
+
 // DYNAMIC LOADING FUNCTION
 function openPage(url) {
     // If timer is set and navigating to another page, clear the timer
