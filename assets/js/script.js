@@ -178,6 +178,36 @@ function deletePlaylist(playlistId) {
     }
 }
 
+function deleteUser(userId) {
+    var conf = confirm("Are you sure you want to delete this user?");
+    if(conf) {
+        $.post("Includes/Handlers/ajax/deleteUser.php", { userId: userId }, function(err) {
+            if(err != "") {
+                console.log(err);
+                return;
+            }
+
+            // Reload page again async.
+            openPage("settings.php");
+        });
+    }
+}
+
+function deleteSong(songId) {
+    var conf = confirm("Are you sure you want to delete this song?");
+    if(conf) {
+        $.post("Includes/Handlers/ajax/deleteSong.php", { songId: songId }, function(err) {
+            if(err != "") {
+                console.log(err);
+                return;
+            }
+
+            // Reload page again async.
+            openPage("settings.php");
+        });
+    }
+}
+
 // Plays first song in artist page
 function playArtistFirstSong() {
     setTrack(tempPlaylist[0], tempPlaylist, true);

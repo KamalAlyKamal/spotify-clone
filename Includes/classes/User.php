@@ -27,6 +27,13 @@
             return $row['email'];
         }
 
+        public function isAdmin() {
+            $query = mysqli_query($this->con, "SELECT admin from users WHERE username='$this->username'");
+            $row = mysqli_fetch_array($query);
+            
+            return $row['admin'];
+        }
+
 	}
 
 ?>

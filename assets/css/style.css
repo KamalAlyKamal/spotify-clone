@@ -331,6 +331,11 @@ input:focus {
     font-weight: 200;
 }
 
+.entityInfo h2 {
+    text-align: center;
+    margin-top: 50px;
+}
+
 .tracklist {
     padding: 0;
 }
@@ -588,3 +593,163 @@ input:focus {
     font-weight: 300;
 }
 /***************************** SETTINGS PAGE END *****************************/
+/***************************** ADMIN SETTINGS TABLE START *****************************/
+.js-pscroll {
+    position: relative;
+    overflow: hidden;
+  }
+  
+.table100 .ps__rail-y {
+    width: 9px;
+    background-color: transparent;
+    opacity: 1 !important;
+    right: 5px;
+}
+
+.table100 .ps__rail-y::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #ebebeb;
+    border-radius: 5px;
+    width: 100%;
+    height: calc(100% - 30px);
+    left: 0;
+    top: 15px;
+}
+
+.table100 .ps__rail-y .ps__thumb-y {
+    width: 100%;
+    right: 0;
+    background-color: transparent;
+    opacity: 1 !important;
+}
+
+.table100 .ps__rail-y .ps__thumb-y::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #cccccc;
+    border-radius: 5px;
+    width: 100%;
+    height: calc(100% - 30px);
+    left: 0;
+    top: 15px;
+}
+
+.table100 {
+    background-color: #fff;
+}
+
+table {
+    width: 100%;
+}
+
+th, td {
+    font-weight: unset;
+    padding-right: 10px;
+}
+
+.column1 {
+    width: 10%;
+    padding-left: 40px;
+}
+
+.column2 {
+    width: 20%;
+}
+
+.column3 {
+    width: 25%;
+}
+
+.column4 {
+    width: 10%;
+}
+
+.column5 {
+    width: 13%;
+}
+
+.table100-head th {
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.table100-body td {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+.table100 {
+    position: relative;
+    padding-top: 60px;
+}
+
+.table100-head {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.table100-body {
+    max-height: 585px;
+    overflow: auto;
+}
+
+.table100.ver3 {
+    background-color: #393939;
+}
+
+.table100-body img {
+    width: 30px;
+    height: 30px;
+}
+
+.table100.ver3 th {
+    font-weight: 700;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    font-size: 15px;
+    color: #00ad5f;
+    line-height: 1.4;
+    text-transform: uppercase;
+    background-color: #393939;
+}
+
+.table100.ver3 td {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    font-size: 15px;
+    color: #808080;
+    line-height: 1.4;
+    background-color: #222222;
+}
+
+
+.table100.ver3 {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+}
+
+.table100.ver3 .ps__rail-y {
+    right: 5px;
+}
+
+.table100.ver3 .ps__rail-y::before {
+    background-color: #4e4e4e;
+}
+
+.table100.ver3 .ps__rail-y .ps__thumb-y::before {
+    background-color: #00ad5f;
+}
+/***************************** ADMIN SETTINGS TABLE END *****************************/
