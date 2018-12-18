@@ -16,6 +16,10 @@
             </div>
 
             <div class="navItem">
+                <span onclick="openPage('topRated.php');" class="navItemLink">Top 10</span>
+            </div>
+
+            <div class="navItem">
                 <span onclick="openPage('yourMusic.php');" class="navItemLink">Your Music</span>
             </div>
 
