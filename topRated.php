@@ -7,9 +7,13 @@
     <ul class="tracklist">
         <?php
             $songsQuery = mysqli_query($con, "SELECT id FROM songs ORDER BY plays DESC LIMIT 10");
-            $count = 1;
+            $songIdArray = array();
             while($row = mysqli_fetch_array($songsQuery)) {
-                $songId = $row['id'];
+                array_push($songIdArray, $row['id']);
+            }
+
+            $count = 1;
+            foreach($songIdArray as $songId) {
                 $albumSong = new Song($con, $songId);
                 $albumArtist = $albumSong->getArtist();
 
