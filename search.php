@@ -3,8 +3,8 @@
 
     if(isset($_GET['query'])) {
         // To decode URL
-        // For example: if query is: kamal aly then in the url will be kamal%20aly
-        // urldecode output = kamal aly
+        // For example: if query is: ahmed osman then in the url will be ahmed%20osman
+        // urldecode output = ahmed osman
         $query = urldecode($_GET['query']);
     }
     else {
