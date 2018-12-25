@@ -260,7 +260,7 @@ function Audio() {
         this.audio.currentTime = seconds;
     }
 
-    // Event listener for duration
+    // Event listener for duration at the start of the song
     this.audio.addEventListener('canplay', function() {
         var duration = formatTime(this.duration);
         $('.progressTime.remaining').text(duration);

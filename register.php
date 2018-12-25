@@ -46,9 +46,6 @@ if(isset($_SESSION['userLoggedIn'])) {
                     </p>
 
                     <button type="submit" name="loginButton">LOG IN</button>
-                    <div class="hasAccountText">
-                        <span id="hideLogin">Dont have account yet? Signup now</span>
-                    </div>
 
                 </form>
 
@@ -115,9 +112,6 @@ if(isset($_SESSION['userLoggedIn'])) {
                     </p>
 
                     <button type="submit" name="registerButton">SIGN UP</button>
-                    <div class="hasAccountText">
-                        <span id="hideRegister">Already have account? Login now</span>
-                    </div>
                 </form>
             </div>
             <div id="loginText">

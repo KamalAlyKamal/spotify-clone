@@ -113,6 +113,10 @@
 	cursor: pointer;
 }
 
+#inputContainer button:focus {
+	outline: none;
+}
+
 .hasAccountText{
 	text-align: center;
 }
@@ -127,9 +131,6 @@
 	color: #CCCCCC !important;
 }
 
-#registerForm{
-	display: none;
-}
 
 #loginText {
     padding: 40px;
