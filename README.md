@@ -35,7 +35,7 @@ For first time only
 
 ## Deployment
 
-Noes about how to deploy this on your localhost
+Notes about how to deploy this on your localhost
 ```
 - Open XAMPP control panel
 - Run Apache
